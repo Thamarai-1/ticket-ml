@@ -1,0 +1,133 @@
+{
+  "model_version": "category-tfidf-logreg-v1",
+  "taxonomy_version": "v1.0",
+  "trained_at": "2026-11-17T08:56:26.314817Z",
+  "random_seed": 42,
+  "classes": [
+    "Access & Identity",
+    "Email & Collaboration",
+    "Hardware",
+    "Network",
+    "Server & Infrastructure",
+    "Software"
+  ],
+  "num_classes": 6,
+  "vocabulary_size": 2500,
+  "hyperparameters": {
+    "tfidf__lowercase": true,
+    "tfidf__ngram_range": [
+      1,
+      2
+    ],
+    "tfidf__max_features": 2500,
+    "tfidf__min_df": 2,
+    "tfidf__sublinear_tf": true,
+    "clf__C": 1.0,
+    "clf__max_iter": 1000,
+    "clf__class_weight": "balanced",
+    "clf__solver": "lbfgs"
+  },
+  "confidence_threshold": 0.6,
+  "baseline_metrics": {
+    "dummy_classifier_accuracy": 0.4933
+  },
+  "validation_metrics": {
+    "accuracy": 0.7838,
+    "mean_confidence": 0.4251
+  },
+  "test_metrics": {
+    "accuracy": 0.8,
+    "macro_precision": 0.7543,
+    "macro_recall": 0.7095,
+    "macro_f1": 0.7156,
+    "weighted_f1": 0.8009,
+    "per_class": {
+      "Access & Identity": {
+        "precision": 0.8,
+        "recall": 0.8889,
+        "f1_score": 0.8421,
+        "support": 9
+      },
+      "Email & Collaboration": {
+        "precision": 0.5,
+        "recall": 0.6667,
+        "f1_score": 0.5714,
+        "support": 3
+      },
+      "Hardware": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1_score": 0.6,
+        "support": 5
+      },
+      "Network": {
+        "precision": 0.8889,
+        "recall": 0.8649,
+        "f1_score": 0.8767,
+        "support": 37
+      },
+      "Server & Infrastructure": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1_score": 0.6667,
+        "support": 2
+      },
+      "Software": {
+        "precision": 0.7368,
+        "recall": 0.7368,
+        "f1_score": 0.7368,
+        "support": 19
+      }
+    },
+    "confusion_matrix": [
+      [
+        8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        3,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        32,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1,
+        4,
+        0,
+        14
+      ]
+    ]
+  }
+}

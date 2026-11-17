@@ -1,0 +1,14 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: ml-service-pdb
+  namespace: ticket-assitant
+  labels:
+    app: ml-service
+    app.kubernetes.io/component: ml-engine
+    app.kubernetes.io/part-of: ticket-assistant
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: ml-service

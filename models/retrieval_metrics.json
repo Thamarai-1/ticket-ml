@@ -1,0 +1,53 @@
+{
+  "bm25_only": {
+    "hit_rate_at_1": 0.7143,
+    "hit_rate_at_3": 0.8571,
+    "hit_rate_at_5": 0.9286,
+    "precision_at_1": 0.7143,
+    "precision_at_3": 0.5238,
+    "precision_at_5": 0.3857,
+    "recall_at_1": 0.2857,
+    "recall_at_3": 0.6071,
+    "recall_at_5": 0.7381,
+    "mrr": 0.7857,
+    "duplicate_detection": {
+      "precision": 0.7692,
+      "recall": 0.7692,
+      "f1_score": 0.7692
+    }
+  },
+  "semantic_only": {
+    "hit_rate_at_1": 0.7857,
+    "hit_rate_at_3": 0.9286,
+    "hit_rate_at_5": 1.0000,
+    "precision_at_1": 0.7857,
+    "precision_at_3": 0.5952,
+    "precision_at_5": 0.4286,
+    "recall_at_1": 0.3214,
+    "recall_at_3": 0.6905,
+    "recall_at_5": 0.8214,
+    "mrr": 0.8524,
+    "duplicate_detection": {
+      "precision": 0.8462,
+      "recall": 0.8462,
+      "f1_score": 0.8462
+    }
+  },
+  "hybrid": {
+    "hit_rate_at_1": 0.9286,
+    "hit_rate_at_3": 1.0000,
+    "hit_rate_at_5": 1.0000,
+    "precision_at_1": 0.9286,
+    "precision_at_3": 0.6667,
+    "precision_at_5": 0.4714,
+    "recall_at_1": 0.3810,
+    "recall_at_3": 0.7857,
+    "recall_at_5": 0.8929,
+    "mrr": 0.9524,
+    "duplicate_detection": {
+      "precision": 0.9231,
+      "recall": 0.9231,
+      "f1_score": 0.9231
+    }
+  }
+}

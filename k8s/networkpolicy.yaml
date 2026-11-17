@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-to-ml-service
+  namespace: ticket-assitant
+spec:
+  podSelector:
+    matchLabels:
+      app: ml-service
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: ticket-backend
+      ports:
+        - protocol: TCP
+          port: 8000
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ml-service-egress
+  namespace: ticket-assitant
+spec:
+  podSelector:
+    matchLabels:
+      app: ml-service
+  policyTypes:
+    - Egress
+  egress:
+    # Allow DNS resolution
+    - to:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: kube-system
+      ports:
+        - protocol: UDP
+          port: 53
+        - protocol: TCP
+          port: 53
+    # Allow outbound HTTPS for OpenRouter (openrouter.ai) and Qdrant Cloud (*.aws.cloud.qdrant.io)
+    - ports:
+        - protocol: TCP
+          port: 443
